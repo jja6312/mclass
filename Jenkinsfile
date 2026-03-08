@@ -30,7 +30,9 @@ pipeline {
         }
 
         stage('Prepare Jar'){
-            sh 'cp target/demo-0.0.1-SNAPSHOT.jar ${JAR_FILE_NAME}'
+            steps {
+                sh 'cp target/demo-0.0.1-SNAPSHOT.jar ${JAR_FILE_NAME}'
+            }
         }
         
         stage('Copy to Remote Server'){
